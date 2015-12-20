@@ -38,7 +38,11 @@ class LogInVC: UIViewController, UITextFieldDelegate {
                 PFUser.logInWithUsernameInBackground (username, password:password) {
                     (user: PFUser?, error: NSError?) -> Void in
                 if user != nil {
-                    self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                    let centerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainVC") as! MainVC
+                    let centerNav = UINavigationController(rootViewController: centerViewController)
+                    
+                    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                    appDelegate.drawerController!.centerViewController = centerNav
                 } else {
                     ShowAlert.sa.showErrorAlert("Could not loggin", msg: "\(error!.localizedDescription)", viewController: self)
                 }
@@ -90,7 +94,11 @@ class LogInVC: UIViewController, UITextFieldDelegate {
                     
                 }
                 
-                self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                let centerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainVC") as! MainVC
+                let centerNav = UINavigationController(rootViewController: centerViewController)
+                
+                let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                appDelegate.drawerController!.centerViewController = centerNav
                 
             } else {
                 print("The user cancelled the Facebook login.")
@@ -153,7 +161,11 @@ class LogInVC: UIViewController, UITextFieldDelegate {
                     task.resume()
                  }
                 
-                self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                let centerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainVC") as! MainVC
+                let centerNav = UINavigationController(rootViewController: centerViewController)
+                
+                let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                appDelegate.drawerController!.centerViewController = centerNav
             } else {
                 print(error?.localizedDescription)
             }
