@@ -123,12 +123,12 @@ class LeftSideVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             
             refreshAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
                 PFUser.logOut()
-                let aboutViewController = self.storyboard?.instantiateViewControllerWithIdentifier("LogInVC") as UIViewController!
-                
+                let centerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("LogInVC") as UIViewController!
+                let centerNav = UINavigationController(rootViewController: centerViewController)
                 
                 let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 
-                appDelegate.drawerController!.centerViewController = aboutViewController
+                appDelegate.drawerController!.centerViewController = centerNav
                 appDelegate.drawerController!.toggleDrawerSide(.Left, animated: true, completion: nil)
             }))
             

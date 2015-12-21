@@ -299,7 +299,7 @@
                                                             <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="GhD-3g-RJP" kind="show" id="DmM-GG-2AQ"/>
+                                                            <segue destination="GhD-3g-RJP" kind="show" id="XfQ-U8-Dot"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -422,7 +422,7 @@
         <!--Sign UpVC-->
         <scene sceneID="DMm-KY-zRk">
             <objects>
-                <viewController id="GhD-3g-RJP" customClass="SignUpVC" customModule="LoLympics" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GhD-3g-RJP" customClass="SignUpVC" customModule="LoLympics" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ImB-f6-omJ"/>
                         <viewControllerLayoutGuide type="bottom" id="KAh-xf-9z4"/>
@@ -758,6 +758,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="ZOf-6M-fBJ"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
@@ -772,7 +773,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAE-Ir-CjL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1194.5" y="1061.5"/>
+            <point key="canvasLocation" x="1194.5" y="1050.5"/>
         </scene>
         <!--MainVC-->
         <scene sceneID="5q3-DC-nJh">
@@ -3130,7 +3131,7 @@ penalties forbidden.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SDl-1Z-tom" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="vJC-Jh-WZK"/>
             </objects>
-            <point key="canvasLocation" x="3280.5" y="-372"/>
+            <point key="canvasLocation" x="4092.5" y="-372"/>
         </scene>
     </scenes>
     <resources>
