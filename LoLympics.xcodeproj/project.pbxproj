@@ -25,6 +25,7 @@
 		5A4F994E1C200C6C002A88FB /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F994D1C200C6C002A88FB /* SearchCell.swift */; };
 		5A4F99501C2011DC002A88FB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F994F1C2011DC002A88FB /* Category.swift */; };
 		5A58FC501C2155E500475540 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58FC4F1C2155E500475540 /* SearchBarView.swift */; };
+		5A8B09DD1C27EBCA006B6250 /* PasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B09DC1C27EBCA006B6250 /* PasswordVC.swift */; };
 		5A9082DD1C1EFBCF006CAA3B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9082DC1C1EFBCF006CAA3B /* MessageUI.framework */; };
 		5A9148EF1C219656009CABE7 /* CancelBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9148EE1C219656009CABE7 /* CancelBtnView.swift */; };
 		5AF0B3AC1C0EF56F0066F666 /* BadgeViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0B3AB1C0EF56F0066F666 /* BadgeViewStyle.swift */; };
@@ -72,6 +73,7 @@
 		5A4F994F1C2011DC002A88FB /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		5A58FC4F1C2155E500475540 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		5A7C0B881C2451F0000CD22C /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		5A8B09DC1C27EBCA006B6250 /* PasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordVC.swift; sourceTree = "<group>"; };
 		5A9082DC1C1EFBCF006CAA3B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5A9148EE1C219656009CABE7 /* CancelBtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelBtnView.swift; sourceTree = "<group>"; };
 		5AF0B3AB1C0EF56F0066F666 /* BadgeViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeViewStyle.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				5A03EC5C1C1ACAE30000FCA9 /* RightSideVC.swift */,
 				985BEA761C1DD886002E4068 /* HistoryVC.swift */,
 				985BEA781C1DE4AA002E4068 /* ContactsVC.swift */,
+				5A8B09DC1C27EBCA006B6250 /* PasswordVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A03EC5F1C1ACAF20000FCA9 /* LeftSideVC.swift in Sources */,
+				5A8B09DD1C27EBCA006B6250 /* PasswordVC.swift in Sources */,
 				5A4F994E1C200C6C002A88FB /* SearchCell.swift in Sources */,
 				5AF505E41C0DA53A00819EE9 /* RoundBtnViewStyle.swift in Sources */,
 				5A4F99501C2011DC002A88FB /* Category.swift in Sources */,

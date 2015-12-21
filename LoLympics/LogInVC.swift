@@ -35,14 +35,37 @@ class LogInVC: UIViewController, UITextFieldDelegate {
         
         if let username = usernameTxtFld.text where username != "", let password = passwordTxtFld.text where password != "" {
             
-                PFUser.logInWithUsernameInBackground (username, password:password) {
-                    (user: PFUser?, error: NSError?) -> Void in
-                if user != nil {
-                    self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
-                } else {
-                    ShowAlert.sa.showErrorAlert("Could not loggin", msg: "\(error!.localizedDescription)", viewController: self)
-                }
-            }
+                let userQuery = PFUser.query()
+                userQuery?.whereKey("email", equalTo: username)
+                userQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                    if objects!.count > 0 {
+                        let object = objects![0]
+                        let user = object["username"] as! String
+                        PFUser.logInWithUsernameInBackground (user, password:password) {
+                            (user: PFUser?, error: NSError?) -> Void in
+                            if user != nil {
+                                self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                            } else {
+                                ShowAlert.sa.showErrorAlert("Could not loggin", msg: "\(error!.localizedDescription)", viewController: self)
+                            }
+                        }
+                        
+                    } else {
+                        PFUser.logInWithUsernameInBackground (username, password:password) {
+                            (user: PFUser?, error: NSError?) -> Void in
+                            if user != nil {
+                                self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                            } else {
+                                ShowAlert.sa.showErrorAlert("Could not loggin", msg: "\(error!.localizedDescription)", viewController: self)
+                            }
+                        }
+                    
+                    }
+                    
+                    
+                })
+            
+            
         } else {
             ShowAlert.sa.showErrorAlert("Could not loggin", msg: "Please fill all fields", viewController: self)
         }
