@@ -2260,7 +2260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFh-aA-eJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2881.5" y="-141"/>
+            <point key="canvasLocation" x="2893.5" y="-3"/>
         </scene>
         <!--ContactsVC-->
         <scene sceneID="bfA-oU-lVY">
@@ -3151,7 +3151,7 @@ penalties forbidden.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SDl-1Z-tom" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="vJC-Jh-WZK"/>
             </objects>
-            <point key="canvasLocation" x="4092.5" y="-372"/>
+            <point key="canvasLocation" x="3362.5" y="-364"/>
         </scene>
         <!--PasswordVC-->
         <scene sceneID="7MX-KT-U5J">
@@ -3416,7 +3416,7 @@ penalties forbidden.</string>
         <image name="mask" width="750" height="468"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="WXf-LS-DY9"/>
         <segue reference="4f7-EL-GCu"/>
-        <segue reference="tqm-Hi-gbU"/>
     </inferredMetricsTieBreakers>
 </document>
