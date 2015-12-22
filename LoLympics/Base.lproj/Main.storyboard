@@ -1481,8 +1481,8 @@
                                                         <constraint firstAttribute="height" constant="1" id="dO6-em-N9M"/>
                                                     </constraints>
                                                 </view>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMMING SOON" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rio-vC-Etg" customClass="BadgeViewStyle" customModule="LoLympics" customModuleProvider="target">
-                                                    <rect key="frame" x="156" y="14" width="102" height="18"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMMING SOON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rio-vC-Etg" customClass="BadgeViewStyle" customModule="LoLympics" customModuleProvider="target">
+                                                    <rect key="frame" x="156" y="14" width="84" height="18"/>
                                                     <color key="backgroundColor" red="0.66274509803921566" green="0.66274509803921566" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="03O-lV-sUr"/>
@@ -1491,6 +1491,11 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Tot-sV-I2A"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -3300,9 +3305,9 @@ penalties forbidden.</string>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
+                                                        <exclude reference="ER3-KR-G3E"/>
                                                         <exclude reference="uiz-2i-cd2"/>
                                                         <exclude reference="xJh-Jh-T28"/>
-                                                        <exclude reference="ER3-KR-G3E"/>
                                                     </mask>
                                                 </variation>
                                             </label>
@@ -3367,8 +3372,8 @@ penalties forbidden.</string>
                                         <exclude reference="0wC-qY-VoT"/>
                                         <exclude reference="3Ru-XD-qI3"/>
                                         <exclude reference="49R-9b-ic7"/>
-                                        <exclude reference="PTe-EX-cld"/>
                                         <exclude reference="5Q7-bl-FFb"/>
+                                        <exclude reference="PTe-EX-cld"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -3416,7 +3421,7 @@ penalties forbidden.</string>
         <image name="mask" width="750" height="468"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WXf-LS-DY9"/>
         <segue reference="4f7-EL-GCu"/>
+        <segue reference="tqm-Hi-gbU"/>
     </inferredMetricsTieBreakers>
 </document>

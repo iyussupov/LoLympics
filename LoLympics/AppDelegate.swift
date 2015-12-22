@@ -73,6 +73,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         installation.setDeviceTokenFromData(deviceToken)
         installation.saveInBackground()
     }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
+            if let postId = userInfo["postId"] as? NSString
+            {
+                print(postId)
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let centerViewController = mainStoryboard.instantiateViewControllerWithIdentifier("DetailVC") as! DetailVC
+                let centerNav = UINavigationController(rootViewController: centerViewController)
+                
+                let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                appDelegate.drawerController!.centerViewController = centerNav
+                
+            } else {
+                PFPush.handlePush(userInfo)
+            }
+            
+    }
+    
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -102,15 +123,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 openURL: url,
                 sourceApplication: sourceApplication,
                 annotation: annotation)
-    }
-    
-    func application(application: UIApplication, viewControllerWithRestorationIdentifierPath identifierComponents: [AnyObject], coder: NSCoder) -> UIViewController? {
-        print(identifierComponents)
-        if let key = identifierComponents.last as? String {
-            print(key)
-        }
-        
-        return nil
     }
     
     func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
