@@ -76,16 +76,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         
-            if let postId = userInfo["postId"] as? NSString
-            {
-                print(postId)
-                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                
-                let centerViewController = mainStoryboard.instantiateViewControllerWithIdentifier("DetailVC") as! DetailVC
-                let centerNav = UINavigationController(rootViewController: centerViewController)
-                
-                let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                appDelegate.drawerController!.centerViewController = centerNav
+            if let postId = userInfo["postId"] as? NSString {
+                let PostsQuery: PFQuery =  PFQuery(className:"Post")
+                PostsQuery.includeKey("category")
+                PostsQuery.cachePolicy = .NetworkElseCache
+                PostsQuery.getObjectInBackgroundWithId(postId as String, block: { (object, error) -> Void in
+                    if error == nil {
+                        let key = object!.objectId as String!
+                        let date = object!.createdAt as NSDate!
+                        let post = Post(postKey: key, date: date, dictionary: object!)
+                        
+                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        
+                        let centerViewController = mainStoryboard.instantiateViewControllerWithIdentifier("DetailVC") as! DetailVC
+                        centerViewController.post = post
+                        centerViewController.toggleLeftDrawer = true
+                        
+                        let centerNav = UINavigationController(rootViewController: centerViewController)
+                        
+                        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                        appDelegate.drawerController!.centerViewController = centerNav
+                    }
+                })
                 
             } else {
                 PFPush.handlePush(userInfo)

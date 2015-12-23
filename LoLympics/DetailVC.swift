@@ -21,6 +21,7 @@ class DetailVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var post: Post!
     var toggleRightDrawer: Bool?
+    var toggleLeftDrawer: Bool?
     var comments = [Comment]()
     static var imageCache = NSCache()
     var preventAnimation = Set<NSIndexPath>()
@@ -289,10 +290,17 @@ class DetailVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBAction func DetailsBackBtn(sender: AnyObject) {
         self.backBtnHover.backgroundColor = UIColor(red: 244/255, green: 121/255, blue: 31/255, alpha: 1)
         
-        if toggleRightDrawer != true {
-            self.navigationController?.popViewControllerAnimated(true)
-        } else {
+        if toggleRightDrawer == true {
+            
             self.evo_drawerController?.toggleRightDrawerSideAnimated(true, completion: nil)
+            
+        } else if toggleLeftDrawer == true {
+            
+            self.evo_drawerController?.toggleLeftDrawerSideAnimated(true, completion: nil)
+            
+        } else {
+            
+            self.navigationController?.popViewControllerAnimated(true)
         }
     }
     
