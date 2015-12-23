@@ -22,7 +22,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var posts = [Post]()
     var category: Category!
     static var imageCache = NSCache()
-    let postLimit = 2
+    let postLimit = 10
     var postSkip = 0
     var postCount = 0
     var refreshControl:UIRefreshControl!
